@@ -1,0 +1,701 @@
+//	now overwrite their old audition data with this new info...
+				UPDATE ip_auditions
+				SET 
+					showId = :showId,
+					personId = :personId,
+					whenAudition = :whenAudition,
+					song = :song,
+					height = :height,
+					experience = :experience,
+					dance = :dance,
+					conflicts = :conflicts,
+					roles = :roles,
+					role2 = :role2,
+					role3 = :role3,
+					acceptEnsemble = :acceptEnsemble,
+					tech = :tech,
+					carpool = :carpool,
+					signature = :signature,
+					parentSignature = :parentSignature,
+					comments = :comments,
+					date = :date
+				WHERE id = :auditionId
+				LIMIT 1
+//	check if this auditionee is already in the system...
+		SELECT id
+		FROM ip_people
+		WHERE firstName = :firstName
+		AND lastName = :lastName
+		LIMIT 1
+//	first make a back-up copy of the old person data so we don't lose something important...
+			INSERT INTO bak_ip_people
+			SELECT p.*, CURRENT_TIMESTAMP()
+			FROM ip_people p
+			WHERE id = :personId;
+//	now overwrite their old person info with this new info...
+			UPDATE ip_people
+			SET 
+				type = :type,
+				firstName = :firstName,
+				lastName = :lastName,
+				gender = :gender,
+				dateOfBirth = :dateOfBirth,
+				height = :height,
+				email = :email,
+				phone = :phone,
+				address = :address,
+				city = :city,
+				state = :state,
+				zip = :zip,
+				parentFirstName = :parentFirstName,
+				parentLastName = :parentLastName,
+				parentPhone = :parentPhone,
+				parentEmail = :parentEmail,
+				ip = :ip
+			WHERE id = :personId
+			LIMIT 1
+//	check if their audition is already in the system...
+			SELECT id
+			FROM ip_auditions
+			WHERE personId = :personId
+			AND showId = :showId
+			LIMIT 1
+//	first make a back-up copy of the old audition data so we don't lose something important...
+				INSERT INTO bak_ip_auditions
+				SELECT a.*, CURRENT_TIMESTAMP()
+				FROM ip_auditions a
+				WHERE id = :auditionId;
+//	now overwrite their old audition data with this new info...
+				UPDATE ip_auditions
+				SET 
+					showId = :showId,
+					personId = :personId,
+					whenAudition = :whenAudition,
+					song = :song,
+					height = :height,
+					experience = :experience,
+					dance = :dance,
+					conflicts = :conflicts,
+					roles = :roles,
+					role2 = :role2,
+					role3 = :role3,
+					acceptEnsemble = :acceptEnsemble,
+					tech = :tech,
+					carpool = :carpool,
+					signature = :signature,
+					parentSignature = :parentSignature,
+					comments = :comments,
+					date = :date
+				WHERE id = :auditionId
+				LIMIT 1
+//	check if this auditionee is already in the system...
+		SELECT id
+		FROM ip_people
+		WHERE firstName = :firstName
+		AND lastName = :lastName
+		LIMIT 1
+//	first make a back-up copy of the old person data so we don't lose something important...
+			INSERT INTO bak_ip_people
+			SELECT p.*, CURRENT_TIMESTAMP()
+			FROM ip_people p
+			WHERE id = :personId;
+//	now overwrite their old person info with this new info...
+			UPDATE ip_people
+			SET 
+				type = :type,
+				firstName = :firstName,
+				lastName = :lastName,
+				gender = :gender,
+				dateOfBirth = :dateOfBirth,
+				height = :height,
+				email = :email,
+				phone = :phone,
+				address = :address,
+				city = :city,
+				state = :state,
+				zip = :zip,
+				parentFirstName = :parentFirstName,
+				parentLastName = :parentLastName,
+				parentPhone = :parentPhone,
+				parentEmail = :parentEmail,
+				ip = :ip
+			WHERE id = :personId
+			LIMIT 1
+//	check if their audition is already in the system...
+			SELECT id
+			FROM ip_auditions
+			WHERE personId = :personId
+			AND showId = :showId
+			LIMIT 1
+//	first make a back-up copy of the old audition data so we don't lose something important...
+				INSERT INTO bak_ip_auditions
+				SELECT a.*, CURRENT_TIMESTAMP()
+				FROM ip_auditions a
+				WHERE id = :auditionId;
+//	now overwrite their old audition data with this new info...
+				UPDATE ip_auditions
+				SET 
+					showId = :showId,
+					personId = :personId,
+					whenAudition = :whenAudition,
+					song = :song,
+					height = :height,
+					experience = :experience,
+					dance = :dance,
+					conflicts = :conflicts,
+					roles = :roles,
+					acceptEnsemble = :acceptEnsemble,
+					tech = :tech,
+					carpool = :carpool,
+					signature = :signature,
+					parentSignature = :parentSignature,
+					comments = :comments,
+					date = :date
+				WHERE id = :auditionId
+				LIMIT 1
+//	check if this auditionee is already in the system...
+		SELECT id
+		FROM ip_people
+		WHERE firstName = :firstName
+		AND lastName = :lastName
+		LIMIT 1
+//	first make a back-up copy of the old person data so we don't lose something important...
+			INSERT INTO bak_ip_people
+			SELECT p.*, CURRENT_TIMESTAMP()
+			FROM ip_people p
+			WHERE id = :personId;
+//	now overwrite their old person info with this new info...
+			UPDATE ip_people
+			SET 
+				type = :type,
+				firstName = :firstName,
+				lastName = :lastName,
+				gender = :gender,
+				dateOfBirth = :dateOfBirth,
+				height = :height,
+				email = :email,
+				phone = :phone,
+				address = :address,
+				city = :city,
+				state = :state,
+				zip = :zip,
+				parentFirstName = :parentFirstName,
+				parentLastName = :parentLastName,
+				parentPhone = :parentPhone,
+				parentEmail = :parentEmail,
+				ip = :ip
+			WHERE id = :personId
+			LIMIT 1
+//	check if their audition is already in the system...
+			SELECT id
+			FROM ip_auditions
+			WHERE personId = :personId
+			AND showId = :showId
+			LIMIT 1
+//	insert this new audition into database using the known personId...
+			INSERT INTO ip_auditions (
+				showId,
+				personId,
+				whenAudition,
+				song,
+				height,
+				experience,
+				dance,
+				conflicts,
+				roles,
+				acceptEnsemble,
+				tech,
+				carpool,
+				signature,
+				parentSignature,
+				comments,
+				date
+			) VALUES (
+				:showId,
+				:personId,
+				:whenAudition,
+				:song,
+				:height,
+				:experience,
+				:dance,
+				:conflicts,
+				:roles,
+				:acceptEnsemble,
+				:tech,
+				:carpool,
+				:signature,
+				:parentSignature,
+				:comments,
+				:date
+			);
+//	check if this auditionee is already in the system...
+		SELECT id
+		FROM ip_people
+		WHERE firstName = :firstName
+		AND lastName = :lastName
+		LIMIT 1
+//	insert this new person into database and retrieve their personId (for the audition)...
+			INSERT INTO ip_people (
+				type,
+				firstName,
+				lastName,
+				gender,
+				dateOfBirth,
+				height,
+				email,
+				phone,
+				address,
+				city,
+				state,
+				zip,
+				parentFirstName,
+				parentLastName,
+				parentPhone,
+				parentEmail,
+				dateCreated,
+				ip
+			) VALUES (
+				:type,
+				:firstName,
+				:lastName,
+				:gender,
+				:dateOfBirth,
+				:height,
+				:email,
+				:phone,
+				:address,
+				:city,
+				:state,
+				:zip,
+				:parentFirstName,
+				:parentLastName,
+				:parentPhone,
+				:parentEmail,
+				:date,
+				:ip
+			);
+//	insert this new audition into database using the known personId...
+			INSERT INTO ip_auditions (
+				showId,
+				personId,
+				whenAudition,
+				song,
+				height,
+				experience,
+				dance,
+				conflicts,
+				roles,
+				acceptEnsemble,
+				tech,
+				carpool,
+				signature,
+				parentSignature,
+				comments,
+				date
+			) VALUES (
+				:showId,
+				:personId,
+				:whenAudition,
+				:song,
+				:height,
+				:experience,
+				:dance,
+				:conflicts,
+				:roles,
+				:acceptEnsemble,
+				:tech,
+				:carpool,
+				:signature,
+				:parentSignature,
+				:comments,
+				:date
+			);
+//	check if this auditionee is already in the system...
+		SELECT id
+		FROM ip_people
+		WHERE firstName = :firstName
+		AND lastName = :lastName
+		LIMIT 1
+//	insert this new person into database and retrieve their personId (for the audition)...
+			INSERT INTO ip_people (
+				type,
+				firstName,
+				lastName,
+				gender,
+				dateOfBirth,
+				height,
+				email,
+				phone,
+				address,
+				city,
+				state,
+				zip,
+				parentFirstName,
+				parentLastName,
+				parentPhone,
+				parentEmail,
+				dateCreated,
+				ip
+			) VALUES (
+				:type,
+				:firstName,
+				:lastName,
+				:gender,
+				:dateOfBirth,
+				:height,
+				:email,
+				:phone,
+				:address,
+				:city,
+				:state,
+				:zip,
+				:parentFirstName,
+				:parentLastName,
+				:parentPhone,
+				:parentEmail,
+				:date,
+				:ip
+			);
+//	insert this new audition into database using the known personId...
+			INSERT INTO ip_auditions (
+				showId,
+				personId,
+				whenAudition,
+				song,
+				height,
+				experience,
+				dance,
+				conflicts,
+				roles,
+				acceptEnsemble,
+				tech,
+				carpool,
+				signature,
+				parentSignature,
+				comments,
+				date
+			) VALUES (
+				:showId,
+				:personId,
+				:whenAudition,
+				:song,
+				:height,
+				:experience,
+				:dance,
+				:conflicts,
+				:roles,
+				:acceptEnsemble,
+				:tech,
+				:carpool,
+				:signature,
+				:parentSignature,
+				:comments,
+				:date
+			);
+//	check if this auditionee is already in the system...
+		SELECT id
+		FROM ip_people
+		WHERE firstName = :firstName
+		AND lastName = :lastName
+		LIMIT 1
+//	first make a back-up copy of the old person data so we don't lose something important...
+			INSERT INTO bak_ip_people
+			SELECT p.*, CURRENT_TIMESTAMP()
+			FROM ip_people p
+			WHERE id = :personId;
+//	now overwrite their old person info with this new info...
+			UPDATE ip_people
+			SET 
+				type = :type,
+				firstName = :firstName,
+				lastName = :lastName,
+				gender = :gender,
+				dateOfBirth = :dateOfBirth,
+				height = :height,
+				email = :email,
+				phone = :phone,
+				address = :address,
+				city = :city,
+				state = :state,
+				zip = :zip,
+				parentFirstName = :parentFirstName,
+				parentLastName = :parentLastName,
+				parentPhone = :parentPhone,
+				parentEmail = :parentEmail,
+				ip = :ip
+			WHERE id = :personId
+			LIMIT 1
+//	check if their audition is already in the system...
+			SELECT id
+			FROM ip_auditions
+			WHERE personId = :personId
+			AND showId = :showId
+			LIMIT 1
+//	insert this new audition into database using the known personId...
+			INSERT INTO ip_auditions (
+				showId,
+				personId,
+				whenAudition,
+				song,
+				height,
+				experience,
+				dance,
+				conflicts,
+				roles,
+				acceptEnsemble,
+				tech,
+				carpool,
+				signature,
+				parentSignature,
+				comments,
+				date
+			) VALUES (
+				:showId,
+				:personId,
+				:whenAudition,
+				:song,
+				:height,
+				:experience,
+				:dance,
+				:conflicts,
+				:roles,
+				:acceptEnsemble,
+				:tech,
+				:carpool,
+				:signature,
+				:parentSignature,
+				:comments,
+				:date
+			);
+//	check if this auditionee is already in the system...
+		SELECT id
+		FROM ip_people
+		WHERE firstName = :firstName
+		AND lastName = :lastName
+		LIMIT 1
+//	insert this new person into database and retrieve their personId (for the audition)...
+			INSERT INTO ip_people (
+				type,
+				firstName,
+				lastName,
+				gender,
+				dateOfBirth,
+				height,
+				email,
+				phone,
+				address,
+				city,
+				state,
+				zip,
+				parentFirstName,
+				parentLastName,
+				parentPhone,
+				parentEmail,
+				dateCreated,
+				ip
+			) VALUES (
+				:type,
+				:firstName,
+				:lastName,
+				:gender,
+				:dateOfBirth,
+				:height,
+				:email,
+				:phone,
+				:address,
+				:city,
+				:state,
+				:zip,
+				:parentFirstName,
+				:parentLastName,
+				:parentPhone,
+				:parentEmail,
+				:date,
+				:ip
+			);
+//	insert this new audition into database using the known personId...
+			INSERT INTO ip_auditions (
+				showId,
+				personId,
+				whenAudition,
+				song,
+				height,
+				experience,
+				dance,
+				conflicts,
+				roles,
+				acceptEnsemble,
+				tech,
+				carpool,
+				signature,
+				parentSignature,
+				comments,
+				date
+			) VALUES (
+				:showId,
+				:personId,
+				:whenAudition,
+				:song,
+				:height,
+				:experience,
+				:dance,
+				:conflicts,
+				:roles,
+				:acceptEnsemble,
+				:tech,
+				:carpool,
+				:signature,
+				:parentSignature,
+				:comments,
+				:date
+			);
+//	check if this auditionee is already in the system...
+		SELECT id
+		FROM ip_people
+		WHERE firstName = :firstName
+		AND lastName = :lastName
+		LIMIT 1
+//	first make a back-up copy of the old person data so we don't lose something important...
+			INSERT INTO bak_ip_people
+			SELECT p.*, CURRENT_TIMESTAMP()
+			FROM ip_people p
+			WHERE id = :personId;
+//	now overwrite their old person info with this new info...
+			UPDATE ip_people
+			SET 
+				type = :type,
+				firstName = :firstName,
+				lastName = :lastName,
+				gender = :gender,
+				dateOfBirth = :dateOfBirth,
+				height = :height,
+				email = :email,
+				phone = :phone,
+				address = :address,
+				city = :city,
+				state = :state,
+				zip = :zip,
+				parentFirstName = :parentFirstName,
+				parentLastName = :parentLastName,
+				parentPhone = :parentPhone,
+				parentEmail = :parentEmail,
+				ip = :ip
+			WHERE id = :personId
+			LIMIT 1
+//	check if their audition is already in the system...
+			SELECT id
+			FROM ip_auditions
+			WHERE personId = :personId
+			AND showId = :showId
+			LIMIT 1
+//	insert this new audition into database using the known personId...
+			INSERT INTO ip_auditions (
+				showId,
+				personId,
+				whenAudition,
+				song,
+				height,
+				experience,
+				dance,
+				conflicts,
+				roles,
+				acceptEnsemble,
+				tech,
+				carpool,
+				signature,
+				parentSignature,
+				comments,
+				date
+			) VALUES (
+				:showId,
+				:personId,
+				:whenAudition,
+				:song,
+				:height,
+				:experience,
+				:dance,
+				:conflicts,
+				:roles,
+				:acceptEnsemble,
+				:tech,
+				:carpool,
+				:signature,
+				:parentSignature,
+				:comments,
+				:date
+			);
+//	check if this auditionee is already in the system...
+		SELECT id
+		FROM ip_people
+		WHERE firstName = :firstName
+		AND lastName = :lastName
+		LIMIT 1
+//	first make a back-up copy of the old person data so we don't lose something important...
+			INSERT INTO bak_ip_people
+			SELECT p.*, CURRENT_TIMESTAMP()
+			FROM ip_people p
+			WHERE id = :personId;
+//	now overwrite their old person info with this new info...
+			UPDATE ip_people
+			SET 
+				type = :type,
+				firstName = :firstName,
+				lastName = :lastName,
+				gender = :gender,
+				dateOfBirth = :dateOfBirth,
+				height = :height,
+				email = :email,
+				phone = :phone,
+				address = :address,
+				city = :city,
+				state = :state,
+				zip = :zip,
+				parentFirstName = :parentFirstName,
+				parentLastName = :parentLastName,
+				parentPhone = :parentPhone,
+				parentEmail = :parentEmail,
+				ip = :ip
+			WHERE id = :personId
+			LIMIT 1
+//	check if their audition is already in the system...
+			SELECT id
+			FROM ip_auditions
+			WHERE personId = :personId
+			AND showId = :showId
+			LIMIT 1
+//	insert this new audition into database using the known personId...
+			INSERT INTO ip_auditions (
+				showId,
+				personId,
+				whenAudition,
+				song,
+				height,
+				experience,
+				dance,
+				conflicts,
+				roles,
+				acceptEnsemble,
+				tech,
+				carpool,
+				signature,
+				parentSignature,
+				comments,
+				date
+			) VALUES (
+				:showId,
+				:personId,
+				:whenAudition,
+				:song,
+				:height,
+				:experience,
+				:dance,
+				:conflicts,
+				:roles,
+				:acceptEnsemble,
+				:tech,
+				:carpool,
+				:signature,
+				:parentSignature,
+				:comments,
+				:date
+			);

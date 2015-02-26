@@ -1,0 +1,792 @@
+/* IPTheater.com Stylesheet For All Pages */
+
+	/* STYLE CLASSES (ALL PAGES) */
+.clear {clear: both;}
+.hidden {display: none;}
+.left {float: left;}
+.right {float: right;}
+.enlarge {cursor: pointer;}
+.overlarge {display: none; position: absolute;}
+.overlarge img {border: 3px solid #186; border-radius: 10px;}
+.hider {float: right; clear: right;}
+.hider:hover {cursor: pointer;}
+.weak {font-size: 80%;}
+.strong {font-weight: bold;}
+.bot-trap {display: none;}	/* this keeps dumb submitter bots from spamming my forms */
+.no-bullet li {list-style-type: none;}
+.top-buffer {margin-top: 10px;}
+.center {margin: auto;}
+
+	/* BASIC TEMPLATE */
+body {
+	background: url('/_img/aurora_bg.jpg') repeat-x #000;
+	background-size: 100%;
+	text-align: center;
+
+	&.developerMode {background: #ffd}
+}
+p {text-align: left; margin: 10px 0;}
+h1 {display: none;}
+h2 {font-size: 150%; color: #000; text-align: center;}
+h3 {font-size: 130%; color: #048; margin: 10px auto;}
+a {color: #048;}
+a:hover {color: #f80;text-decoration: none;}
+ul, ol {text-align: left;}
+.jm.list-group .list-group-item label {
+	display: inline-block;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+/* GRID SIZES */
+@xsMax: 767px;	//	-xs (≥0px)
+@smMin: 768px;	//	-sm (≥768px)
+@smMax: 991px;
+@mdMin: 992px;	//	-md (≥992px)
+@mdMax: 1199px;
+@lgMin: 1200px;	//	-lg (≥1200px)
+
+@alphaBG: url('/_img/alpha/alphawhite_90.png') repeat;	//	background
+/* MEDIA ADJUSTMENTS */
+	/* MULTIPLE PAGES */
+@media (max-width: @xsMax) {  /*  phones only */
+	body {padding-top: 65px;}
+	.btn-group-justified {display:inherit;}
+	#index .main h2 {height: 70px;}
+	.iptForm .row .form-label {text-align: left;}
+	#form .text-right {text-align:left;}
+}
+@media (min-width: @smMin) {
+	#past_productions .production_photos .photos {
+		.show_logo {width: 150px;}
+		.pic_spacer {height: 150px;}
+		&.rc .pic_spacer, &.rcjr .pic_spacer {height: 115px;}
+	}
+}
+footer {
+	font-size: 80%;
+	background: #000;
+	width: 100%;
+	border-radius: 0 0 10px 10px;
+	height: 30px;
+	color: #fff;
+	text-align: right;
+	padding-top: 10px;
+	position: relative;
+	top: 30px;
+
+	a {margin: 5px;}
+	span {
+		float: left;
+		display: block;
+	}
+}
+table.tablesorter thead th {
+	cursor: pointer;
+
+	&.tablesorter-headerAsc .tablesorter-header-inner:after {content: "\25B4";}
+	&.tablesorter-headerDesc .tablesorter-header-inner:after {content: "\25BE";}
+}
+
+.content {
+	padding: 7px 15px 0;
+	border: 2px solid #000;
+	border-radius: 10px;
+	background: @alphaBG;
+}
+.logos {margin: 0 20px; max-width: 180px; max-height: 120px;}
+
+.bs-condensed {
+	.row {
+		margin-right: -5px;
+		margin-left: -5px;
+	}
+	.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+		padding-right: 5px;
+		padding-left: 5px;
+	}
+	.form-control {
+		padding-left: 6px;
+		padding-right: 6px;
+	}
+}
+.border-plus-shadow {
+	border: 3px solid #bbb;
+	box-shadow: 2px 2px 3px #222;
+	border-radius: 10px;
+}
+
+#index {
+	h2 {height: 130px;}
+	#logo {max-height: 130px;}
+	.logos3 {
+		height: 160px;
+
+		> a {
+			position: absolute;
+			bottom: 0;
+			text-align: center;
+			left: 0;
+			right: 0;
+			z-index: 10;
+		}
+	}
+	@media (min-width: @mdMin) {
+		#carlee-with-bear {
+			background: url('http://iptheater.com/_img/carlee-with-bear.png') no-repeat;
+			background-position: 10% 100%;
+			background-size: 215px;
+		}
+		#cody {
+			background: url('http://iptheater.com/_img/cody.png') no-repeat;
+			background-position: right 100%;
+			background-size: 155px;
+		}
+		.box-of-theaters {
+			border: 2px solid #888;
+			border-radius: 10px;
+		}
+	}
+}
+
+	/* BACKGROUND CUTOUTS */
+@media (min-width: @smMin) {
+	#index #girls-on-ledge {
+		background: url('/_img/girls-on-ledge.png') no-repeat, url('/_img/houston-christian.png') no-repeat;
+		height: 155px;
+		background-position: right 110%, 10px 0%;
+		position: relative;
+		top: 40px;
+		background-size: 550px, 200px;
+		margin-top: -80px;
+		padding-top: 100px;
+
+		h3 {text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;}
+	}
+	#contact .content {
+		background: url('/_img/jentry.png') no-repeat, @alphaBG;
+		background-position: 95% bottom;
+	}
+	#rhythmcity {
+		.content {
+			background: url('/_img/chase-theresa.png') no-repeat, @alphaBG;
+			background-position: 95% bottom;
+			background-size: 210px;
+		}
+		footer {margin-top: 30px;}
+	}
+	#past_productions .content {
+		background: url('/_img/girls-in-school.png') no-repeat, @alphaBG;
+		background-position: 95% 101%;
+		background-size: 340px;
+	}
+}
+
+	/* SHOW PAGE */
+.show_info {
+	h3 {text-align: left; width: 100%; margin-bottom: -10px;}
+	ul.jm.list-group {
+		margin: -10px 30px 0;
+
+		li {
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+	}
+	blockquote {font-size: 90%;}
+	aside {
+		float: right;
+		margin: 15px 0 0 15px;
+
+		li {list-style-type: none;}
+		img {
+			border: 1px solid #000;
+			border-radius: 10px;
+			width: 180px;
+			box-shadow: 7px 7px 5px #555;
+		}
+	}
+	.synopsis {display: none;}
+	h4 {margin: 15px auto;}
+	div.cutout {
+		position: absolute;
+		right: -10%;
+		bottom: -30px;
+		z-index: 10;
+
+		img {height: 250px;}
+	}
+}
+
+	/* RHYTHM CITY */
+
+	/* CAST INFO */
+#castInfo .content {background: url('/_img/alpha/alphawhite_90.png');}
+#castInfo h2 {color: #008; font-size: 300%; text-decoration: underline;}
+#castInfo .cast {width: 49%;}
+#castInfo .cast thead th {font-size: 200%; border-bottom: 1px solid #000;}
+#castInfo .cast tbody td {text-align: left; padding-left: 15px;}
+#castInfo .cast tbody th {text-align: right;}
+#castInfo .town {float: left;}
+#castInfo ul {margin-left: 30px;}
+
+#castList .content {background: url('/_img/alpha/alphawhite_90.png');}
+#castList h2 {color: #008; font-size: 300%; text-decoration: underline;}
+#castList .cast {width: 49%;}
+#castList .cast thead th {font-size: 200%; border-bottom: 1px solid #000;}
+#castList .cast tbody td {text-align: left; padding-left: 15px;}
+#castList .cast tbody th {text-align: right;}
+#castList .town {float: left;}
+
+#shirts .photos ul {
+	clear: left;
+	margin-left: 30px;
+
+	li {
+		display: inline-block;
+
+		.pic_spacer img {
+			border: 2px solid #186;
+			border-radius: 10px;
+			max-width: 150px;
+			max-height: 150px;
+		}
+	}
+}
+
+#past_productions {
+	.production_photos {
+		> section.prod_bbb > div:first-child {
+			background: url('/_img/ryan-marlee.png') no-repeat;
+			background-position: right 0%;
+			background-size: 200px;
+			margin-top: -150px;
+			padding-top: 150px;
+		}
+		> section.prod_rcjr > div:first-child {
+			position: relative; // note: this breaks the jquery hover on the images for one row, but oh well
+			background: url('/_img/christine.png') no-repeat;
+			background-position: 87% 0;
+			background-size: 180px;
+			margin-top: -170px;
+			padding-top: 170px;
+		}
+		div.cutout {
+			position: absolute;
+			right: 3%;
+			top: -186px;
+			z-index: 10;
+		}
+		.show_logo {
+			height: 75px;
+
+			img {height: 75px;}
+		}
+		strong {
+			font-size: 250%;
+			color: #00c;
+		}
+		hr {
+			margin: 0;
+			border: 1px solid #000;
+		}
+		.photos .pic_spacer {
+			margin: 5px 0;
+
+			img {
+				max-width: 150px;
+				max-height: 150px;
+				border: 2px solid #186;
+				border-radius: 10px;
+			}
+		}
+	}
+}
+
+	/* CAST SURVEY */
+#cast_survey p {text-align: center;}
+#cast_survey .tiny {font-size: 75%;}
+#cast_survey table {text-align: left;}
+#cast_survey table .question {font-weight: bold; background: #ccf;}
+#cast_survey table .question strong {text-decoration: underline;}
+#cast_survey table .question td {padding: 5px 10px;}
+#cast_survey table .answer {background: #cfc;}
+#cast_survey table .answer td {padding-left: 40px;}
+#cast_survey table input[type='radio'] {margin-right: 10px;}
+#cast_survey table input[type='text'] {width: 80%;}
+#cast_survey table tr {border: 1px solid #888; border-collapse: collapse;}
+#cast_survey .radio, #cast_survey .checkbox {margin-top: 0; margin-bottom: 0}
+
+	/* PAY */
+#pay label {display: inline-block;}
+
+	/* SHOW SURVEY */
+#show_survey {
+	p {text-align: center;}
+	form .col-sm-4 {
+		text-align: right;
+
+		label {
+			margin-top: 5px;
+
+			&:after {content: ':';}
+		}
+	}
+	#musicals {
+		thead {
+			border-bottom: 2px solid #aaa;
+
+			th {
+				border: 1px solid #aaa;
+				background: #ddf;
+				text-align: center;
+				vertical-align: middle;
+			}
+		}
+		tbody {
+			border: 1px solid #aaa;
+
+			th {
+				background: #fff;
+				vertical-align: middle;
+			}
+			td {
+				background: #fff;
+				padding: 0;
+
+				label {
+					padding: 0;
+					width: 100%;
+					margin: 0;
+				}
+				input[type='radio'] {
+					width: auto;
+					box-shadow: none;
+					margin: 3px auto 0;
+				}
+			}
+		}
+		td:nth-last-of-type(4), thead tr:last-child th:nth-last-of-type(4) {background: #cfc;}
+		td:nth-last-of-type(3), thead tr:last-child th:nth-last-of-type(3) {background: #ffc;}
+		td:nth-last-of-type(2), thead tr:last-child th:nth-last-of-type(2) {background: #cff;}
+		td:last-of-type, thead tr:last-child th:last-of-type {background: #fed;}
+	}
+}
+
+	/* AUDITION FORM */
+#audition_form {
+	form {
+		text-align: left;
+
+		.list-group {
+			input[type='radio'] {vertical-align: top;}
+			label {font-weight: normal;}
+		}
+		input {
+			&#firstName, &#lastName {max-width: 100px;}
+			&[type='number'] {
+				max-width: 50px;
+
+				&[name='dobYYYY'] {max-width: 60px;}
+			}
+		}
+		textarea {
+			display: block;
+			width: 100%;
+			min-height: 50px;
+		}
+	}
+	#headshot {
+		display: none;
+		text-align: center;
+
+		img {.border-plus-shadow;}
+	}
+	textarea {
+		&[name='dance'], &[name='conflicts'] {height: 1.5em;}
+	}
+	#roles li {display: inline-block;}
+	#techAreas li {
+		display: inline-block;
+		margin-right: 13px;
+
+		input[type='checkbox'] {margin: -3px 5px 0 0;}
+	}
+}
+
+	/* SHOW SURVEY RESULTS */
+#show_survey_results {
+	#results_section {
+		ul li {
+			text-align: center;
+			list-style-type: none;
+		}
+		table {
+			text-align: left;
+			width: 530px;
+			border-collapse: collapse;
+			margin: auto;
+
+			th {
+				text-align: right;
+				padding-right: 5px;
+				white-space: nowrap;
+				max-width: 200px;
+				text-overflow: ellipsis;
+				overflow: hidden;
+			}
+			td {
+				width: 300px;
+
+				bar {
+					background: #080;
+					display: block;
+					height: 11px;
+				}
+			}
+		}
+	}
+	#details_section table {
+		background: #fff;
+
+		td {
+			text-align: left;
+
+			&:not(:last-of-type) {
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				overflow: hidden;
+				max-width: 100px;
+
+				&:nth-of-type(2) {max-width: 150px;}
+			}
+		}
+	}
+}
+
+.summaryTable {
+	clear: both;
+	background: #fff;
+	text-align: left;
+	border-collapse: collapse;
+
+	th, td {
+		padding: 5px 10px;
+		border: 1px solid #ccc;
+	}
+}
+
+	/* TICKETS */
+#tickets {
+	&.ticketBoothMode {background: #ff8;}
+
+	.content {
+		form {margin: 20px auto;}
+		ul {list-style-type: none;}
+		.chart {
+			position: relative;
+			width: 900px;
+
+			#overlay a {
+				display: block;
+				background: #ff0;
+				border-radius: 50%;
+				position: absolute;
+				opacity: 0.7;
+
+				&:hover {
+					background: #00f;
+					border: 1px solid #000;
+				}
+				&.chosen, &.chosen:hover {background: #f00;}
+			}
+		}
+		#choosePerformance {
+		}
+
+		ul.ticketPics {
+			list-style-type: none;
+
+			> li {
+				background-image: url(/_img/ticket_bg.png);
+				background-repeat: no-repeat;
+				float: left;
+				color: #fff;
+				height: 117px;
+				width: 200px;
+				margin: 0 5px 10px;
+
+				> div {
+					background-repeat: no-repeat;
+					background-position: top 10px right 20px;
+					background-size: 55px;
+
+					em {
+						color: #ff0;
+						display: inline-block;
+						font-size: 80%;
+						margin: 40px 0 0 30px;
+					}
+					table {
+						margin: 5px auto 0;
+						text-align: center;
+						font-size: 90%;
+						font-variant:small-caps;
+						width: 80%;
+
+						th {
+							font-weight: normal;
+							font-size: 80%;
+							text-align: center;
+						}
+						td {
+							padding-top: 4px;
+							font-weight: bold;
+							color: #ff0;
+							transform:scale(1,2); /* W3C */
+							-webkit-transform:scale(1,2); /* Safari and Chrome */
+							-moz-transform:scale(1,2); /* Firefox */
+							-ms-transform:scale(1,2); /* IE 9 */
+							-o-transform:scale(1,2); /* Opera */
+						}
+					}
+				}
+			}
+		}
+		#orderSummary {
+			margin: auto;
+		}
+		#basicInfo form .row section {
+			&:first-of-type {text-align: right;}
+			&:last-of-type {text-align: left;}
+		}
+		#priceBreakdown, #infoBreakdown {.summaryTable;}
+	}
+}
+
+	/* GENERAL TABLE FORMAT */
+.iptTable {
+	thead {background: #ff8;}
+	tbody tr {
+		&:nth-child(odd) td {background: #fff;}
+		&:nth-child(even) td {background: #eee;}
+		&:hover td {background: #ffc;}
+	}
+	th, td {
+		text-align: left;
+		vertical-align: middle;
+
+		img {max-height: 50px;}
+	}
+}
+
+	/* AUDITIONEES */
+#auditionees table.table {
+	.iptTable;
+
+	th, td {
+		&:first-child, &:nth-child(3) {text-align: center;}
+	}
+}
+
+	/* CAST LIST */
+#cast_list table.table {
+	thead {background: #ff8;}
+	tbody tr {
+		&:nth-child(odd) td {background: #fff;}
+		&:nth-child(even) td {background: #eee;}
+		&:hover td {background: #ffc;}
+	}
+	th, td {
+		text-align: left;
+		vertical-align: middle;
+
+		img {max-height: 50px;}
+	}
+}
+
+	/* CAST FACES */
+#cast_faces table.table {
+	thead {background: #ff8;}
+	tbody tr {
+		color: transparent;
+
+		&:nth-child(odd) td {background: #fff;}
+		&:nth-child(even) td {background: #eee;}
+		&:hover {
+			color: #000;
+
+			td {background: #ffc;}
+		}
+	}
+	th, td {
+		text-align: left;
+		vertical-align: middle;
+
+		label {
+			display: block;
+			height: 103px;
+			font-weight: normal;
+
+			img {margin: 0 5px;}
+		}
+	}
+}
+
+	/* Ticket Search */
+#tickets_search {
+	table.table {
+		thead {background: #ff8;}
+		tbody tr {
+			&:nth-child(odd) td {background: #fff;}
+			&:nth-child(even) td {background: #eee;}
+			&:hover td {background: #ffc;}
+			&.mailed {text-decoration: line-through;}
+			&.separator {border-top: 5px solid #c00;}
+		}
+		th, td {
+			text-align: left;
+			vertical-align: middle;
+
+			&.perf_1,&.perf_4 {color: #00c;}
+			&.perf_2,&.perf_5 {color: #090;}
+			&.perf_3,&.perf_6 {color: #c60;}
+			&.perf_7 {color: #60f;}
+			&.perf_8 {color: #f00;}
+			&.perf_9 {color: #630;}
+		}
+	}
+}
+
+.iptForm {
+	.form-label {
+		text-align: right;
+
+		label {
+			margin-top: 5px;
+
+			&:after {content: ':';}
+		}
+	}
+}
+
+.fb_photos {
+	display: table;
+	background: #ff8;
+
+	div {
+		display: table-cell;
+		width: 48%;
+		padding: 10px;
+
+		img {
+			width: 95%;
+			border: 2px solid #00f;
+			box-shadow: 0 0 5px #00f;
+
+			&:hover {
+				border: 2px solid #f80;
+				box-shadow: 0 0 5px #f80;
+			}
+		}
+	}
+}
+
+#bbb_cast {
+	h3, h4 {margin: 10px auto;}
+	.rehearsalSchedule {max-width: 100%;}
+	ul.ul {
+		max-width: 300px;
+		margin: 10px auto;
+
+		a {display: block;}
+	}
+}
+
+#bio_form {
+	#bio_preview {
+		display: none;
+
+		img {
+			.border-plus-shadow;
+			float: left;
+			margin-right: 10px;
+		}
+		h5 {
+			text-align: left;
+			font-size: 120%;
+		}
+		hr {
+			border-top: 2px solid #555;
+			margin-top: 0;
+		}
+	}
+}
+
+#bios {
+	.cast-bio {
+		padding: 10px;
+
+		> div {
+			.border-plus-shadow;
+			border-radius: 13px;
+
+			img {
+				.border-plus-shadow;
+				float: left;
+				margin-right: 10px;
+				width: 75px;
+				height: 100px;
+			}
+			h5 {
+				text-align: left;
+				font-size: 120%;
+			}
+			hr {
+				border-top: 2px solid #555;
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+#registration_form {
+	form {
+		text-align: left;
+
+		#headshot {
+			display: none;
+			text-align: center;
+
+			img {.border-plus-shadow;}
+		}
+		.list-group {
+			input[type='radio'] {vertical-align: top;}
+			label {font-weight: normal;}
+		}
+		input {
+			&#firstName, &#lastName {max-width: 100px;}
+			&[type='number'] {
+				max-width: 50px;
+
+				&[name='dobYYYY'] {max-width: 60px;}
+			}
+		}
+		textarea {
+			display: block;
+			width: 100%;
+			min-height: 50px;
+		}
+	}
+	textarea {
+		&[name='dance'], &[name='conflicts'] {height: 1.5em;}
+	}
+	#roles li {display: inline-block;}
+	#techAreas li {
+		display: inline-block;
+		margin-right: 13px;
+
+		input[type='checkbox'] {margin: -3px 5px 0 0;}
+	}
+}
+/* IPTheater.com */
