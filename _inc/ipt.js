@@ -337,4 +337,12 @@ $(function onReady() {
 			event.preventDefault();
 		}
 	});
+
+	$('#showHideSynopsis').click(function() {
+		$('.synopsis').slideToggle();
+		$(this).find('span').html(function() {
+			return $(this).html() === 'Show' ? 'Hide' : 'Show';
+		});
+		return false;
+	});
 });

@@ -62,7 +62,7 @@ if(apiPost('submit') && !$likelySpam) {
 		. "Reply-To: $firstName $lastName <$email>\n"
 		. "MIME-Version: 1.0\n"
 		. "Content-type: text/html; charset=iso-8859-1\n"
-		. "cc: {$config['my_email']}"
+		. "cc: {$config['my_email']}\n"
 		. "bcc: {$config['bcc_email']}";
 	$message = preg_replace("#(?<!\r)\n#si", "\r\n", $message);	// Fix any bare linefeeds in the message to make it RFC821 Compliant
 	$headers = preg_replace("#(?<!\r)\n#si", "\r\n", $headers); // Make sure there are no bare linefeeds in the headers
@@ -71,8 +71,11 @@ if(apiPost('submit') && !$likelySpam) {
 	//	Send an email to registrant...
 	$to = $email;
 	$message = "<p>Hi $firstName!<br><br>\n"
-		. "Thank you for your interest in Immeasurable Productions' 13!<br><br>\n"
-		. "We look forward to your audition!<br><br>\n"
+		. "Thank you for registering for Immeasurable Productions' Summer Camp: 13!<br><br>\n"
+		. "If you have paid your $50 holding fee then you are guaranteed a spot in the show!<br><br>\n"
+		. "Congratulations!<br><br>\n"
+		. "You will receive more information by email in the coming months about auditions, costumes, and rehearsals!<br><br>\n"
+		. "We are so excited to work with you this summer!<br><br>\n"
 		. "Mindy Moritz<br>\n"
 		. "Immeasurable Productions<br>\n"
 		. "<a href='www.IPTheater.com'>www.IPTheater.com</a><br>\n";
@@ -163,7 +166,7 @@ if(apiPost('submit') && !$likelySpam) {
 			</div>
 			<div class='row'>
 				<section class='col-sm-12'>
-					Please list any conflicts with the rehearsal schedule and/or performances (July 13-19): 
+					Please list any conflicts with the rehearsal schedule and/or performances (July 13-19):
 					<textarea name='conflicts' class='form-control'></textarea>
 				</section>
 			</div>

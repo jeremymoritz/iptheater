@@ -1,5 +1,8 @@
 <?php	//	Immeasurable Productions Musicals (IPTheater.com)
 require_once '_inc/ipt_1.php';
+$title = '13 Information Page';
+$body_class .= ' show_info';
+require_once '_inc/ipt_2.php';
 
 $currentShow = new Show(61, '13', 'thirteen');
 $sql = "
@@ -14,21 +17,6 @@ $performances = sthFetchObjects($sth);	//	fetch all of the performances
 foreach($performances as $p) {
 	$currentShow->addPerformance(new Performance($p->id, $p->dateTime));
 }
-
-$title = $currentShow->getTitle() . ' Information Page';
-$body_class .= ' show_info';
-
-$js_content = "
-	<script>
-		$('#showHideSynopsis').click(function() {
-			$('.synopsis').slideToggle();
-			$(this).find('span').html(function() {
-				return $(this).html() === 'Show' ? 'Hide' : 'Show';
-			});
-			return false;
-		});
-	</script>";
-require_once '_inc/ipt_2.php';
 
 $performancesHTML = "
 	<ul class='jm list-group'>";
@@ -46,7 +34,8 @@ $performancesHTML .= "
 			<div class='col-xs-12'>
 				<h2>
 					<img src='/_img/ip-logo-long_400_trans.png' alt='Immeasurable Productions' class='img-responsive inline-block'>
-					<br>We are offering our first-ever Musical Summer Camp!  This summer, we will produce Jason Robert Brown's hit musical 13<br>
+					<br>We are offering our first-ever Musical Summer Camp!
+					<br>This summer, we will produce Jason Robert Brown's hit musical 13<br>
 					<img src='_img/<?=$currentShow->getAbbr();?>-logo_400.png' alt='<?=$currentShow->getTitle();?>' class='img-responsive inline-block top-buffer'>
 				</h2>
 			</div>
@@ -61,18 +50,6 @@ $performancesHTML .= "
 				<p>The camp will be July 13-19th</p>
 				<h3>REHEARSALS...</h3>
 				<p><strong>WHEN:</strong> July 13 - 17, <?=date('Y');?> from 9am to 5pm daily <span>(some selected leads or specialty dance groups will stay till 6pm)</span></p>
-				<!-- <div class='row'>
-					<div class='col-sm-8 col-md-6 col-lg-4'>
-						<ul class='jm list-group'>
-							<li class='list-group-item'>Mon, July 13th: 9am-5pm*</li>
-							<li class='list-group-item'>Tues, July 14th: 9am-5pm*</li>
-							<li class='list-group-item'>Wed, July 15th: 9am-5pm*</li>
-							<li class='list-group-item'>Thurs, July 16th: 9am-5pm*</li>
-							<li class='list-group-item'>Friday, July 17th: 9-6pm</li>
-						</ul>
-					</div>
-				</div>
-				<p>*Certain cast members will be asked to stay until 6pm on these days</p> -->
 				<h3>PERFORMANCES...</h3>
 				<p><strong>WHEN:</strong></p>
 				<div class='row'>
@@ -84,7 +61,7 @@ $performancesHTML .= "
 				<p>There will be a cast party after the Sunday performance, so please plan to stay for that if possible.</p>
 				<p>There are only 45 spots available for this show, so sign up right away if interested. A $50 deposit is required to hold your campers spot in the camp. This goes towards your campers tuition. The rest of the tuition will be due at auditions on May 30th.</p>
 				<h3>AUDITIONS...</h3>
-				<p>Auditions will be held on Saturday, May 30th  from 9:30am-12:30pm. And Callbacks from 12:30pm-3pm. (Location to be determined)</p>
+				<p>Auditions will be held on Friday, May 29th  from 3pm - 5:30pm. And Callbacks from 6pm - 9pm. (Location to be determined)</p>
 				<p>If you cannot attend the audition day, please upload an audition video and email us the link by May 29th.</p>
 				<p>Please fill out the <a class='btn btn-success' href='registration_form.php' title='Fill out the Registration Form!'><i class='fa fa-lg fa-pencil-square-o'></i> <?=$currentShow->getTitle();?> Camp Registration Form</a> online and pay the $50 holding fee to reserve your spot.</p>
 				<p>A confirmation email with more information will be sent out within one week of receiving your deposit.</p>

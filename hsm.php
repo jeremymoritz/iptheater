@@ -2,17 +2,6 @@
 require_once '_inc/ipt_1.php';
 $title = $currentShow->getTitle() . ' Information Page';
 $body_class .= ' show_info';
-
-$js_content = "
-	<script>
-		$('#showHideSynopsis').click(function showHideSynopsis() {
-			$('.synopsis').slideToggle();
-			$(this).find('span').html(function changeButtonText() {
-				return $(this).html() === 'Show' ? 'Hide' : 'Show';
-			});
-			return false;
-		});
-	</script>";
 require_once '_inc/ipt_2.php';
 
 $performancesHTML = "

@@ -3,12 +3,13 @@
 //	nav stuff
 $navLinks = array(
 	array('href' => '/', 													'title' => "Immeasurable Productions Home", 					'faIcon' => 'home', 			'navText' => 'Home'),
-	// array('href' => 'show_survey', 								'title' => "Cast Your Vote for this year's musical!", 'faIcon' => 'calendar', 	'navText' => 'Winter 2015'),
-	array('href' => $currentShow->getAbbr(), 			'title' => $currentShow->getTitle(), 									'faIcon' => 'music', 			'navText' => $currentShow->getTitle()),
-	// array('href' => 'tickets', 										'title' => "On sale now!", 														'faIcon' => 'ticket', 		'navText' => 'Tickets'),
-	// array('href' => 'audition_form', 								'title' => $currentShow->getTitle() . " Audition Form", 											'faIcon' => 'pencil-square-o', 			'navText' => 'Audition Form'),
+	// array('href' => 'show_survey', 						'title' => "Cast Your Vote for this year's musical!", 'faIcon' => 'calendar', 	'navText' => 'Winter 2015'),
+	array('href' => 'thirteen', 									'title' => "13 (Musical Summer Camp!)", 					'faIcon' => 'thumbs-o-up', 			'navText' => '13 (summer)'),
+	array('href' => $currentShow->getAbbr(), 			'title' => $currentShow->getTitle(), 									'faIcon' => 'music', 			'navText' => $currentShow->getTitle() . ' (winter)'),
+	// array('href' => 'tickets', 								'title' => "On sale now!", 														'faIcon' => 'ticket', 		'navText' => 'Tickets'),
+	// array('href' => 'audition_form', 					'title' => $currentShow->getTitle() . " Audition Form", 											'faIcon' => 'pencil-square-o', 			'navText' => 'Audition Form'),
 	array('href' => 'past_productions', 					'title' => "Past Productions", 												'faIcon' => 'picture-o', 	'navText' => 'Past Productions'),
-	// array('href' => 'rhythmcity', 								'title' => "Rhythm City Junior", 											'faIcon' => 'film', 			'navText' => 'Rhythm City'),
+	// array('href' => 'rhythmcity', 							'title' => "Rhythm City Junior", 											'faIcon' => 'film', 			'navText' => 'Rhythm City'),
 	array('href' => 'contact', 										'title' => "Contact Us", 															'faIcon' => 'envelope', 			'navText' => 'Contact Us')
 );
 $fullNav = '';
