@@ -1,6 +1,7 @@
 <?php	//	Immeasurable Productions Musicals (IPTheater.com)
 require_once('_inc/ipt_1.php');
 $title = "13 Registration Form";
+$body_class .= ' form_page';
 require_once('_inc/ipt_2.php');
 
 // $formSubmitted = apiGet('formSubmitted');
@@ -29,7 +30,6 @@ if(apiPost('submit') && !$likelySpam) {
 	$parentPhone = apiPost('parentPhone') ? trim(apiPost('parentPhone')) : null;
 	$parentEmail = apiPost('parentEmail') ? trim(apiPost('parentEmail')) : null;
 	$conflicts = apiPost('conflicts') ? apiPost('conflicts') : null;
-	$acceptEnsemble = apiPost('acceptEnsemble');
 	$signature = trim(apiPost('signature'));
 	$parentSignature = apiPost('parentSignature') ? trim(apiPost('parentSignature')) : null;
 	$comments = apiPost('comments') ? apiPost('comments') : null;
@@ -79,16 +79,16 @@ if(apiPost('submit') && !$likelySpam) {
 		. "Mindy Moritz<br>\n"
 		. "Immeasurable Productions<br>\n"
 		. "<a href='www.IPTheater.com'>www.IPTheater.com</a><br>\n";
-	$subject = "We look forward to your audition!";
+	$subject = "You are registered for Summer Camp: 13!";
 	$headers = "From: Mindy Moritz <mindy@iptheater.com>\n"
 		. "MIME-Version: 1.0\n"
 		. "Content-type: text/html; charset=iso-8859-1\n"
 		. "bcc: {$config['bcc_email']}";
 	$message = preg_replace("#(?<!\r)\n#si", "\r\n", $message);	// Fix any bare linefeeds in the message to make it RFC821 Compliant
 	$headers = preg_replace("#(?<!\r)\n#si", "\r\n", $headers); // Make sure there are no bare linefeeds in the headers
-	mail($to,$subject,$message,$headers);
+	mail($to, $subject, $message, $headers);
 	if ($parentEmail && $parentEmail !== $email) {
-		mail($parentEmail,$subject,$message,$headers);	//	send the same email to parent
+		mail($parentEmail, $subject, $message, $headers);	//	send the same email to parent
 	}
 
 	//	Redirect to payment page

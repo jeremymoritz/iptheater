@@ -751,42 +751,34 @@ table.tablesorter thead th {
 }
 
 #registration_form {
-	form {
-		text-align: left;
+	form input {
+		&#firstName, &#lastName {max-width: 100px;}
+		&[type='number'] {
+			max-width: 50px;
 
-		#headshot {
-			display: none;
-			text-align: center;
+			&[name='dobYYYY'] {max-width: 60px;}
+		}
+	}
+}
 
-			img {.border-plus-shadow;}
-		}
-		.list-group {
-			input[type='radio'] {vertical-align: top;}
-			label {font-weight: normal;}
-		}
-		input {
-			&#firstName, &#lastName {max-width: 100px;}
-			&[type='number'] {
-				max-width: 50px;
+.form_page form {
+	text-align: left;
 
-				&[name='dobYYYY'] {max-width: 60px;}
-			}
-		}
-		textarea {
-			display: block;
-			width: 100%;
-			min-height: 50px;
-		}
+	#headshot {
+		display: none;
+		text-align: center;
+
+		img {.border-plus-shadow;}
+	}
+	.list-group {
+		input[type='radio'] {vertical-align: top;}
+		label {font-weight: normal;}
 	}
 	textarea {
-		&[name='dance'], &[name='conflicts'] {height: 1.5em;}
-	}
-	#roles li {display: inline-block;}
-	#techAreas li {
-		display: inline-block;
-		margin-right: 13px;
+		display: block;
+		min-height: 50px;
 
-		input[type='checkbox'] {margin: -3px 5px 0 0;}
+		&[name='dance'], &[name='conflicts'] {height: 1.5em;}
 	}
 }
 /* IPTheater.com */

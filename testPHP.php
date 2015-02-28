@@ -17,6 +17,8 @@ require_once('_inc/ipt_2.php');
 			} else {
 				echo "no";
 			}
+
+			echo getAge(date('Y-m-d', strtotime('3/5/2001')));
 			?>
 			</p>
 		</section>

@@ -42,10 +42,15 @@ $performancesHTML .= "
 		</div>
 		<div class='row'>
 			<div class='col-sm-10 col-sm-offset-1'>
+				<h2>
+					<i class='fa fa-frown-o'></i> Camp is closed for GIRLS <i class='fa fa-frown-o'></i><br>
+					<small>If you are a girl, click this link to </small><a href='wait_list' class='btn btn-warning'><i class='fa fa-list-alt'></i> join the waiting list</a><br>
+					<small>If you are a boy, please read on and fill out the camp registration form</small>
+				</h2>
 				<p>Ages 12 - 16</p>
 				<p>Camp Tuition: $195</p>
 				<p>Includes a camp T-shirt, pizza party, and the opportunity to be in this awesome, high-energy show!</p>
-				<h2><a class='btn btn-success' href='registration_form.php' title='Fill out the Registration Form!'><i class='fa fa-lg fa-pencil-square-o'></i> <?=$currentShow->getTitle();?> Camp Registration Form</a></h2>
+				<h2><a class='btn btn-success' href='registration_form.php' title='Fill out the Registration Form!'><i class='fa fa-lg fa-pencil-square-o'></i> <?=$currentShow->getTitle();?> Camp Registration Form (Boys only)</a></h2>
 				<p>13 is a really fun, modern type musical set in a Junior High. It follows Evan Goldman. A Jewish boy from New York City who just moved to Appleton, Indiana right before his 13th birthday. A modern score that follows the life of kids going through a crazy transition in their life as they enter their teenage years.</p>
 				<p>The camp will be July 13-19th</p>
 				<h3>REHEARSALS...</h3>
@@ -63,7 +68,7 @@ $performancesHTML .= "
 				<h3>AUDITIONS...</h3>
 				<p>Auditions will be held on Friday, May 29th  from 3pm - 5:30pm. And Callbacks from 6pm - 9pm. (Location to be determined)</p>
 				<p>If you cannot attend the audition day, please upload an audition video and email us the link by May 29th.</p>
-				<p>Please fill out the <a class='btn btn-success' href='registration_form.php' title='Fill out the Registration Form!'><i class='fa fa-lg fa-pencil-square-o'></i> <?=$currentShow->getTitle();?> Camp Registration Form</a> online and pay the $50 holding fee to reserve your spot.</p>
+				<p>Please fill out the <a class='btn btn-success' href='registration_form.php' title='Fill out the Registration Form!'><i class='fa fa-lg fa-pencil-square-o'></i> <?=$currentShow->getTitle();?> Camp Registration Form (Boys only)</a> online and pay the $50 holding fee to reserve your spot.</p>
 				<p>A confirmation email with more information will be sent out within one week of receiving your deposit.</p>
 				<p>There are only 45 spots available and this camp WILL fill up so don’t delay!</p>
 				<p><?=$currentShow->getTitle();?> Staff:<br>
