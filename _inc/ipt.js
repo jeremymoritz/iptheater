@@ -78,16 +78,20 @@ function getExt(theImage) {
 }
 
 function getAgeFromDOB(dateOfBirth) {
-	if(dateOfBirth) {
+	var age;
+
+	if (dateOfBirth) {
 		var year = Number(dateOfBirth.substr(0, 4));
 		var month = Number(dateOfBirth.substr(5, 2)) - 1;
 		var day = Number(dateOfBirth.substr(8, 2));
 		var today = new Date();
-		var age = today.getFullYear() - year;
-		if(today.getMonth() < month || (today.getMonth() == month && today.getDate() < day)){
+		age = today.getFullYear() - year;
+
+		if (today.getMonth() < month || (today.getMonth() == month && today.getDate() < day)) {
 			age--;
 		}
 	}
+
 	return age || 100;
 }
 

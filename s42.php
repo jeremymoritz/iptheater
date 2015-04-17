@@ -121,7 +121,7 @@ $performancesHTML .= "
 				<p><em><?=$currentShow->getTitle();?></em> opened on Broadway in 1980, won the Tony Award for Best Musical, and played for 3,486 performances. It was later revived on Broadway in 2001 winning the Tony Award for Best Revival and ran for another 1524 performances over the next 4 years.  It is a well-loved, energetic musical that is highly entertaining for audiences and cast members alike.</p>
 				<p>We are excited to make this another unforgettable show!  <a href='contact.php'>Contact us</a> if you wish to be added to the email list to receive the latest updates regarding <!--auditions, rehearsals and -->performances<!--.  We look forward to working with you to put together this marvelous production of <em><?=$currentShow->getTitle();?></em>-->!</p>
 				<img src='_img/<?=$currentShow->getAbbr();?>-stage-photo.png' alt='' class='img-responsive'>
-				<div class='cutout hide-xs'>
+				<div class='cutout hidden-xs'>
 					<img src='_img/maggie-christian.png' alt=''>
 				</div>
 			</div>

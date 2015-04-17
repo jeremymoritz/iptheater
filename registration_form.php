@@ -15,6 +15,7 @@ if(apiPost('submit') && !$likelySpam) {
 	$firstName = trim(apiPost('firstName'));
 	$lastName = trim(apiPost('lastName'));
 	$gender = apiPost('gender');
+	$chosenWeek = apiPost('chosenWeek');
 	$height = (intval(apiPost('ht_ft')) * 12) + intval(apiPost('ht_in'));	//	height is stored only in inches
 	$dateOfBirth = apiPost('dateOfBirth');
 	$phone = trim(apiPost('phone'));
@@ -40,12 +41,13 @@ if(apiPost('submit') && !$likelySpam) {
 	$to = 'mindy@iptheater.com';
 	$message = "<b>name:</b> $firstName $lastName<br>\n"
 		. "<b>dateOfBirth:</b> $dateOfBirth (age: " . getAge($dateOfBirth) . ")<br>\n"
-		. "<b>conflicts:</b> " . nl2br($conflicts) . "<br>\n"
-		. "<b>comments:</b> " . nl2br($comments) . "<br>\n"
 		. "<b>gender:</b> $gender<br>\n"
+		. "<b>chosenWeek:</b> $chosenWeek<br>\n"
 		. "<b>height:</b> " . floor($height / 12) . "'" . ($height % 12) . '"' . "<br>\n"
 		. "<b>phone:</b> $phone<br>\n"
 		. "<b>email:</b> $email<br>\n"
+		. "<b>conflicts:</b> " . nl2br($conflicts) . "<br>\n"
+		. "<b>comments:</b> " . nl2br($comments) . "<br>\n"
 		. "<b>tshirt:</b> $tshirt<br>\n"
 		. "<b>address:</b> $address<br>\n"
 		. "<b>city:</b> $city<br>\n"
@@ -147,6 +149,15 @@ if(apiPost('submit') && !$likelySpam) {
 			</div>
 			<div class='row'>
 				<section class='col-sm-12'>
+					<strong>Chosen Camp Week:</strong><select name='chosenWeek' class='form-control' required>
+						<option value=''>Select One...</option>
+						<option value='1'>Week 1 (Boys only - Full for Girls)</option>
+						<option value='2' selected>Week 2</option>
+					</select>
+				</section>
+			</div>
+			<div class='row'>
+				<section class='col-sm-12'>
 					<strong>Address:</strong><input type='text' name='address' class='form-control'>
 					<strong>Zip:</strong><input type='text' name='zip' maxlength='10' class='formatter format-zip form-control' id='zip'>
 					<strong>City:</strong><input type='text' name='city' id='city' class='form-control'>
@@ -166,7 +177,7 @@ if(apiPost('submit') && !$likelySpam) {
 			</div>
 			<div class='row'>
 				<section class='col-sm-12'>
-					Please list any conflicts with the rehearsal schedule and/or performances (July 13-19):
+					Please list any conflicts with the rehearsal schedule and/or performances (Week 1: July 13-19 or Week 2: July 20-26):
 					<textarea name='conflicts' class='form-control'></textarea>
 				</section>
 			</div>

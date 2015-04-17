@@ -85,7 +85,7 @@ $performancesHTML .= "
 				<p>We will be implementing some exciting new changes this year:</p>
 				<ol>
 					<li><strong>SMALLER CAST SIZE AND ENSEMBLE TRACKS:</strong> By limiting our cast size to 50 people (ages 13+), we'll have individual tracks set for the entrances, exits, costume changes, and dances for each member of the ensemble!</li>
-					<li><strong>WILDCAT CREW (PRESHOW PERFORMANCE):</strong> This year, we're excited to showcase a separate cast of performers (ages 8-13) before the start of each show!  The Wildcat Crew will have a 15-minute high-energy pre-show performance featuring the best musical numbers from High School Musical 2 and High School Musical 3!  Featured solo singers and fun dances will start our performances off with a rush of adrenaline!  All of these dances will be entertaining and challenging and choreographed by our very own Mindy Moritz!</li>
+					<li><strong>WILDCAT CREW (PRESHOW PERFORMANCE):</strong> This year, we're excited to showcase a separate cast of performers (ages 8-13) before the start of each show!  The Wildcat Crew will have a 15-minute high-energy pre-show performance featuring the best musical numbers from High School Musical 2 and High School Musical 3!  Featured solo singers and fun dances will start our performances off with a rush of adrenaline!  The Crew will rehearse December 26 - 31, <?=date('Y');?> from 9am to 6pm daily.  All of these dances will be entertaining and challenging and choreographed by our very own Mindy Moritz!</li>
 				</ol>
 				<h3>ABOUT THE SHOW...</h3>
 				<p>Here's a blurb about <em><?=$currentShow->getTitle();?></em>... <span>(excerpted from the licensing company's official website.)</span></p>
@@ -111,7 +111,7 @@ $performancesHTML .= "
 				</blockquote>
 				<p>Since the Disney channel movie <em><?=$currentShow->getTitle();?></em> was adapted for the stage in 2007, it has been performed by over 5,000 theaters throughout the world.  We are excited to make this another unforgettable show!  <a href='contact.php'>Contact us</a> if you wish to be added to the email list to receive the latest updates regarding auditions, rehearsals and performances.  We look forward to working with you to create an outstanding production of <em><?=$currentShow->getTitle();?></em>!</p>
 				<img src='_img/<?=$currentShow->getAbbr();?>-stage-photo.jpg' alt='' class='img-responsive center'>
-				<div class='cutout hide-xs'>
+				<div class='cutout hidden-xs'>
 					<img src='_img/maggie-christian.png' alt=''>
 				</div>
 			</div>

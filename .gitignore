@@ -3,3 +3,13 @@ _assets
 _img/
 zOld/
 config.php
+**/node_modules/
+.DS_Store
+.ftpquota
+*.mov
+*.mp3
+*.mp4
+*.m4v
+*.psd
+*.zip
+*.webm

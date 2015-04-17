@@ -42,39 +42,71 @@ $performancesHTML .= "
 		</div>
 		<div class='row'>
 			<div class='col-sm-10 col-sm-offset-1'>
-				<h2>
+				<!-- <h2><i class='fa fa-smile-o'></i><strong> ANNOUNCING!</strong> A SECOND "13" CAMP! <i class='fa fa-smile-o'></i><br>
+					Keep reading to find out more!</h2> -->
+				<!-- <h2>
 					<i class='fa fa-frown-o'></i> Camp is closed for GIRLS <i class='fa fa-frown-o'></i><br>
 					<small>If you are a girl, click this link to </small><a href='wait_list' class='btn btn-warning'><i class='fa fa-list-alt'></i> join the waiting list</a><br>
 					<small>If you are a boy, please read on and fill out the camp registration form</small>
+				</h2> -->
+				<h2>
+					Registration is Open Now!
 				</h2>
+				<p>Due to the overwhelming number of people wanting to participate in the Immeasurable Productions "13" Musical Summer Camp, we have decided to offer a second week!</p>
 				<p>Ages 12 - 16</p>
 				<p>Camp Tuition: $195</p>
 				<p>Includes a camp T-shirt, pizza party, and the opportunity to be in this awesome, high-energy show!</p>
-				<h2><a class='btn btn-success' href='registration_form.php' title='Fill out the Registration Form!'><i class='fa fa-lg fa-pencil-square-o'></i> <?=$currentShow->getTitle();?> Camp Registration Form (Boys only)</a></h2>
+				<h2><a class='btn btn-success' href='registration_form.php' title='Fill out the Registration Form!'><i class='fa fa-lg fa-pencil-square-o'></i> <?=$currentShow->getTitle();?> Camp Registration Form<!--  (Boys only) --></a></h2>
+				<ul class='jm list-group top-buffer'>
+					<li class='list-group-item'>WEEK 1: July 13-19 (CLOSED for girls)</li>
+					<li class='list-group-item'>WEEK 2: July 20-26 (Registration <!-- opens Saturday, March 7th at 10am! -->is open now!)</li>
+				</ul>
 				<p>13 is a really fun, modern type musical set in a Junior High. It follows Evan Goldman. A Jewish boy from New York City who just moved to Appleton, Indiana right before his 13th birthday. A modern score that follows the life of kids going through a crazy transition in their life as they enter their teenage years.</p>
-				<p>The camp will be July 13-19th</p>
 				<h3>REHEARSALS...</h3>
-				<p><strong>WHEN:</strong> July 13 - 17, <?=date('Y');?> from 9am to 5pm daily <span>(some selected leads or specialty dance groups will stay till 6pm)</span></p>
+				<p><strong>WHEN:</strong><br>
+					WEEK 1: July 13-17<br>
+					WEEK 2: July 20-23<br>
+					Rehearsals will be from 9am-5pm daily. <span>(Some selected leads will be asked to stay until 6pm)</span></p>
 				<h3>PERFORMANCES...</h3>
 				<p><strong>WHEN:</strong></p>
+				<p>WEEK 1:</p>
 				<div class='row'>
 					<div class='col-sm-8 col-md-6 col-lg-4'>
-						<?=$performancesHTML;?>
+						<ul class='jm list-group'>
+							<li class='list-group-item'>7pm on Fri, July 17th</li>
+							<li class='list-group-item'>2pm on Sat, July 18th</li>
+							<li class='list-group-item'>7pm on Sat, July 18th</li>
+							<li class='list-group-item'>1pm on Sun, July 19th</li>
+						</ul>
+					</div>
+				</div>
+				<p>WEEK 2:</p>
+				<div class='row'>
+					<div class='col-sm-8 col-md-6 col-lg-4'>
+						<ul class='jm list-group'>
+							<li class='list-group-item'>7pm on Fri, July 24th</li>
+							<li class='list-group-item'>2pm on Sat, July 25th</li>
+							<li class='list-group-item'>7pm on Sat, July 25th</li>
+							<li class='list-group-item'>2pm on Sun, July 26th</li>
+						</ul>
 					</div>
 				</div>
 				<p><strong>WHERE:</strong> All rehearsals and performances take place at Olathe Civic Theatre Association (OCTA) - <span>500 E. Loula Rd., Olathe, KS. 66061</span></p>
 				<p>There will be a cast party after the Sunday performance, so please plan to stay for that if possible.</p>
-				<p>There are only 45 spots available for this show, so sign up right away if interested. A $50 deposit is required to hold your campers spot in the camp. This goes towards your campers tuition. The rest of the tuition will be due at auditions on May 30th.</p>
+				<p>There are only 45 spots available for each camp. A $50 deposit is required to hold your place. This goes towards your campers tuition. The rest of the tuition will be due at auditions on May 29th.</p>
 				<h3>AUDITIONS...</h3>
-				<p>Auditions will be held on Friday, May 29th  from 3pm - 5:30pm. And Callbacks from 6pm - 9pm. (Location to be determined)</p>
-				<p>If you cannot attend the audition day, please upload an audition video and email us the link by May 29th.</p>
-				<p>Please fill out the <a class='btn btn-success' href='registration_form.php' title='Fill out the Registration Form!'><i class='fa fa-lg fa-pencil-square-o'></i> <?=$currentShow->getTitle();?> Camp Registration Form (Boys only)</a> online and pay the $50 holding fee to reserve your spot.</p>
-				<p>A confirmation email with more information will be sent out within one week of receiving your deposit.</p>
-				<p>There are only 45 spots available and this camp WILL fill up so don’t delay!</p>
+				<p><strong>WHEN:</strong> Friday, May 29th, 2:30pm - 6pm (Callbacks 6pm - 9:30pm).</p>
+				<p><strong>WHERE: </strong> Cross Points Church (6824 Lackman Rd, Shawnee, KS 66217)</p>
+				<p>If you cannot attend the audition day, please upload an audition video and email us the link by May 28th.</p>
+				<p>There are only 45 spots available for each session. Week 1 is closed for girls, although you can still click here to <a href='wait_list' class='btn btn-warning'><i class='fa fa-list-alt'></i> join the waiting list</a>. For Week 2, we will accept registrations on a first come, first served basis until all of the spots are full.</p>
+				<p>If you are currently enrolled in Week 1, but would like to switch to Week 2, please send an email to <?=disguiseMailLink('mindy@iptheater.com');?>. Switching is encouraged, so if you are able to switch camp sessions, please let us know as soon as you can!</p>
+				<p>We still have availability for boys in either session (especially Week 2)!  If you are a boy, please fill out the <a class='btn btn-success' href='registration_form.php' title='Fill out the Registration Form!'><i class='fa fa-lg fa-pencil-square-o'></i> <?=$currentShow->getTitle();?> Camp Registration Form<!--  (Boys only) --></a> online, and pay the $50 holding fee to reserve your spot.</p>
+				<p>A confirmation email with more information will be sent out upon receiving your deposit.</p>
 				<p><?=$currentShow->getTitle();?> Staff:<br>
 					Director/Choreographer: Mindy Moritz<br>
 					Music/Tech Director: Nick Perry<br>
-					Assistant Director: Jenn Harvey</p>
+					Assistant Director: Jenn Harvey<br>
+					Assistant Choreographer: Elizabeth Brooks</p>
 				<h3>ABOUT THE SHOW...</h3>
 				<p>Here's a blurb about <em><?=$currentShow->getTitle();?></em>... <span>(excerpted from the licensing company's official website.)</span></p>
 				<blockquote class='text-left'>

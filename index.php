@@ -15,7 +15,7 @@ require_once('_inc/ipt_2.php');
 			</div>
 		</div>
 		<div class='row' id='carlee-with-bear'>
-			<div class='col-sm-10 col-sm-offset-1' id='cody'>
+			<div class='col-sm-10 col-sm-offset-1' id='wesley'>
 				<h3>Welcome to IPTheater.com&mdash;the official website for Immeasurable Productions!</h3>
 				<p>Immeasurable Productions is a family-owned and operated production company providing wholesome, high-quality musical theatre for teenagers and young adults in the Kansas City area.</p>
 				<p>We have a history of producing excellent shows every winter, but this year, we are excited to announce our first-ever Summer Camp!</p>
