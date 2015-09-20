@@ -32,7 +32,7 @@ switch($page) {
 						</div>
 						<div class='row top-buffer'>
 							<div class='col-sm-4 form-label'><label>Email</label></div>
-							<div class='col-sm-8'><input type='text' name='email' " . (apiGet('email') ? "value='" . apiGet('email') . "' " : "") . "placeholder='optional' class='form-control'></div>
+							<div class='col-sm-8'><input type='text' name='email' " . (apiGet('email') ? "value='" . apiGet('email') . "' " : "") . "placeholder='email@example.com' class='form-control'></div>
 						</div>
 						<div class='row top-buffer'>
 							<div class='col-sm-4 form-label'><label>Phone</label></div>

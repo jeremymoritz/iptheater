@@ -556,7 +556,12 @@ if(apiPost('submit') && !$likelySpam) {
 			</div>
 			<div class='row'>
 				<section class='col-sm-12'>
-					Would you consider another role (including ensemble)? <select name='acceptEnsemble' class='form-control'><option value='Y'>Yes</option><option value='N'>No</option></select>
+					If you are not cast in the role(s) of your choice, how interested would you be in being cast in the ensemble?<br>
+					<select name='acceptEnsemble' class='form-control'>
+						<option value='2'>I'd be THRILLED to be in the ensemble!</option>
+						<option value='1'>I would graciously accept a role in the ensemble.</option>
+						<option value='0'>Please consider me only for a leading role.</option>
+					</select>
 				</section>
 			</div>
 			<div class='row' data-bind='visible: auditioneeAge() < grownUpAge()'>

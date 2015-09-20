@@ -316,18 +316,26 @@ table.tablesorter thead th {
 }
 
 	/* CAST SURVEY */
-#cast_survey p {text-align: center;}
-#cast_survey .tiny {font-size: 75%;}
-#cast_survey table {text-align: left;}
-#cast_survey table .question {font-weight: bold; background: #ccf;}
-#cast_survey table .question strong {text-decoration: underline;}
-#cast_survey table .question td {padding: 5px 10px;}
-#cast_survey table .answer {background: #cfc;}
-#cast_survey table .answer td {padding-left: 40px;}
-#cast_survey table input[type='radio'] {margin-right: 10px;}
-#cast_survey table input[type='text'] {width: 80%;}
-#cast_survey table tr {border: 1px solid #888; border-collapse: collapse;}
-#cast_survey .radio, #cast_survey .checkbox {margin-top: 0; margin-bottom: 0}
+#cast_survey, #cast_survey_camp {
+	p {text-align: center;}
+	.tiny {font-size: 75%;}
+	table {
+		text-align: left;
+		margin: auto;
+		
+		.question {
+			font-weight: bold; background: #ccf;
+			strong {text-decoration: underline;}
+			td {padding: 5px 10px;}
+		}
+		.answer {background: #cfc;}
+		.answer td {padding-left: 40px;}
+		input[type='radio'] {margin-right: 10px;}
+		input[type='text'] {width: 80%;}
+		tr {border: 1px solid #888; border-collapse: collapse;}
+	}
+	.radio, .checkbox {margin-top: 0; margin-bottom: 0}
+}
 
 	/* PAY */
 #pay label {display: inline-block;}
@@ -793,4 +801,66 @@ table.tablesorter thead th {
 		&[name='dance'], &[name='conflicts'] {height: 1.5em;}
 	}
 }
+
+#cast_list_thirteen {
+	.table {
+		thead th:not(:first-child) {text-align: center;}
+		tbody tr {
+			background: #fcd;
+
+			&.boy {background: #adf;}
+			td {
+				text-align: center;
+
+				&:first-of-type {color: #00f;}
+				&:last-of-type {color: #c00;}
+			}
+		}
+	}
+}
+
+/*
+	Custom Buttons (NOTE: These are commented out because I'm using the
+	Custom purple button I created in bootstrap-jm-custom.less
+*/
+//	This simple solution will work if we switch to using the less files
+// .btn-custom {
+//   .button-variant(blue; red; green);
+// }
+//	This simple solution is too basic, so the colors don't have gradients and stuff
+// @purpleBtnColor: #ab69c6;
+// .btn-purple {
+// 	background: @purpleBtnColor;
+// 	border-color: @purpleBtnColor;
+// 	&:hover {
+// 		background: darken(@purpleBtnColor, 10%);
+// 		border-color: darken(@purpleBtnColor, 10%);
+// 	}
+// }
+//	here is the full solution
+// @purpleBtnColor: #d9f;
+// .btn-purple {
+// 	color: #fff;
+// 	background-color: @purpleBtnColor;
+// 	border-color: darken(@purpleBtnColor, 20%);
+
+// 	&:hover, &:focus, &:active, &.active {
+// 		background-color: darken(@purpleBtnColor, 10%);
+// 		border-color: @purpleBtnColor;
+// 	}
+// 	&:active, &.active {
+// 		background-image: none;
+// 	}
+// 	&.disabled, &[disabled] {
+// 		&:hover, &:focus, &:active, &.active {
+// 			background-color: lighten(@purpleBtnColor, 20%);
+// 			border-color: lighten(@purpleBtnColor, 10%);
+// 		}
+// 	}
+// 	.badge {
+// 		color: #fff;
+// 		background-color: @purpleBtnColor;
+// 	}
+// }
+
 /* IPTheater.com */

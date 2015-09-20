@@ -110,6 +110,14 @@ function apiSnagType($varName, $default = false, $type = false) {
 	return $retVal;
 }
 
+	//	write to the console with PHP
+function phpConsoleLog($data) {
+	$displayData = is_array($data) ? implode(',', $data) : $data;
+	$displayData = str_replace(array("\r\n", "\r", "\n"), "", $displayData);
+
+	echo "<script>console.log('phpConsoleLog: " . $displayData . "');</script>";
+}
+
 	//	determines if the user is on a mobile browser (phone, iPad, etc.)
 function isMobile() {
 	$user_agent = $_SERVER['HTTP_USER_AGENT'];	// Get the user agent

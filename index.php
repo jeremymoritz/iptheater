@@ -18,15 +18,17 @@ require_once('_inc/ipt_2.php');
 			<div class='col-sm-10 col-sm-offset-1' id='wesley'>
 				<h3>Welcome to IPTheater.com&mdash;the official website for Immeasurable Productions!</h3>
 				<p>Immeasurable Productions is a family-owned and operated production company providing wholesome, high-quality musical theatre for teenagers and young adults in the Kansas City area.</p>
-				<p>We have a history of producing excellent shows every winter, but this year, we are excited to announce our first-ever Summer Camp!</p>
+				<!-- <p class='center text-center'><a href='audition_workshop.php' class='btn btn-warning'><i class='fa fa-star-o'></i> Check out our upcoming Audition Workshop! <i class='fa fa-star-o'></i></a></p> -->
+				<!-- <p>We have a history of producing excellent shows every winter, but this year, we are excited to announce our first-ever Summer Camp!</p>
 				<a href='thirteen'><img src='_img/thirteen-logo_250.png' alt='13' class='img-responsive inline-block top-buffer center'></a>
 				<h4>Music by: Jason Robert Brown<br>
 					Book by: Dan Elish and Robert Horn<br>
 					Director/Choreographer: Mindy Moritz<br>
 					Vocal Director: Nick Perry<br>
 					Assistant Director: Jenn Harvey</h4>
+				<h2><a class='btn btn-lg btn-purple' href='cast_list_thirteen.php'><i class='fa fa-list-alt'></i> 13 Cast List</a></h2>
 				<h4><a href='thirteen' class='btn btn-success'><i class='fa fa-comment-o'></i> Click here for more info!</a></h4>
-				<hr>
+				<hr> -->
 				<p>Each winter, we produce a fun, professional-quality musical during the week between Christmas and New Year's day. We recently finished a run of <em><?=$previousShow->getTitle();?></em>&mdash;<a href='past_productions.php' class='btn btn-info'><i class='fa fa-camera'></i> Pictures Here</a>.  Thank you to all who were involved in making this show a success!</p>
 				<p>This year, we are excited to announce that our upcoming musical will be...</p>
 				<h3><a href='<?=$currentShow->getAbbr();?>.php'><img src='_img/<?=$currentShow->getAbbr();?>-logo_400.png' alt='<?=$currentShow->getTitle();?>' class='img-responsive center'></a></h3>

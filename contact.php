@@ -8,7 +8,6 @@ if(filter_input(INPUT_POST, 'submit')) {
 	//	They've filled out the form and submitted it.  Now let's insert their info into the database!
 	$name = apiPost('name');
 	$email = apiPost('email');
-	$phone = apiPost('phone');
 	$comments = apiPost('comments');
 	$ip = $_SERVER['REMOTE_ADDR'];
 	// $ip = $_SERVER['REMOTE_ADDR'];
@@ -19,14 +18,12 @@ if(filter_input(INPUT_POST, 'submit')) {
 		//	first adjust these variables to make sure there's no funnybusiness
 	$name = get_magic_quotes_gpc() ? $name : addslashes($name);
 	$email = isValidEmail($email) ? $email : 'INVALID_EMAIL (' . addslashes($email) . ')';
-	$phone = get_magic_quotes_gpc() ? $phone : addslashes($phone);
 	$comments = get_magic_quotes_gpc() ? $comments : addslashes($comments);
 
 	$to = $config['info_email'];
 	$message = "<b>IP Web Contact:</b><br><br>\n"
 		. "Name: $name<br>\n"
 		. "Email: $email<br>\n"
-		. "Phone: $phone<br>\n"
 		. "Comments: $comments<br>\n"
 		. "Date: $date<br>\n"
 		. "I.P.: $ip";
@@ -45,6 +42,25 @@ if(filter_input(INPUT_POST, 'submit')) {
 	}
 
 	if(!$likelySpam) {	//	avoid getting blank/spam emails
+		mail($to,$subject,$message,$headers);
+
+		//	send an autoresponder email
+		$to = $email;
+		$message = "Thank you for contacting us!<br><br>\n"
+			. "You've been added to our email list, so you will be updated occasionally with the latest information about upcoming auditions and performances!<br><br>\n"
+			. "Thanks for your interest in Immeasurable Productions!<br><br>\n"
+			. "Jeremy Moritz<br>\n"
+			. "Immeasurable Productions<br>\n"
+			. "<a href='http://www.iptheater.com'>www.IPTheater.com</a>";
+		$subject = "Thank you for your interest in Immeasurable Productions!";
+		$headers = "From: IPTheater.com <" . $config['info_email'] . ">\n"
+			. "Reply-To: IPTheater.com <" . $config['info_email'] . ">\n"
+			. "MIME-Version: 1.0\n"
+			. "Content-type: text/html; charset=iso-8859-1\n"
+			. "bcc: {$config['bcc_email']}";
+		$message = preg_replace("#(?<!\r)\n#si", "\r\n", $message);	// Fix any bare linefeeds in the message to make it RFC821 Compliant
+		$headers = preg_replace('#(?<!\r)\n#si', "\r\n", $headers); 	// Make sure there are no bare linefeeds in the headers
+
 		mail($to,$subject,$message,$headers);
 	}
 
@@ -69,7 +85,7 @@ if($completedform) {
 		<div class='row'>
 			<div class='col-sm-6 col-md-5 col-lg-6' id='form'>
 				<h3>Thank you for your interest in <em>Immeasurable Productions</em>!</h3>
-				<h3>You may expect a reply soon.</h3>
+				<h3>We really appreciate it.</h3>
 <?php
 } else {
 ?>
@@ -90,12 +106,8 @@ if($completedform) {
 						<div class='col-sm-7 col-md-8 col-lg-9'><input type='text' name='email' class='form-control'></div>
 					</div>
 					<div class='row top-buffer'>
-						<div class='col-sm-5 col-md-4 col-lg-3 form-label'><label>Phone</label></div>
-						<div class='col-sm-7 col-md-8 col-lg-9'><input type='text' name='phone' class='form-control formatter format-phone'></div>
-					</div>
-					<div class='row top-buffer'>
 						<div class='col-sm-5 col-md-4 col-lg-3 form-label'><label>Comments or Questions</label></div>
-						<div class='col-sm-7 col-md-8 col-lg-9'><textarea name='comments' rows='6' cols='23' class='form-control'></textarea></div>
+						<div class='col-sm-7 col-md-8 col-lg-9'><textarea name='comments' rows='6' cols='23' class='form-control' placeholder='Add me to the email list!'></textarea></div>
 					</div>
 
 					<!-- BOT-TRAP: THIS PART IS MEANT TO STOP SPAM SUBMISSIONS FROM ROBOTS (if you see this section, don't change these fields) -->

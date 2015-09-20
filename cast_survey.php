@@ -3,6 +3,8 @@ include('_inc/ipt_1.php');
 $title = 'Immeasurable Productions Cast Survey';
 include('_inc/ipt_2.php');
 
+header('Location: ./cast_survey_camp.php');
+
 //	SURVEY QUESTIONS
 $questions = array(
 	"",	//	NOTE: This is left blank because there is no Question #0
@@ -30,7 +32,7 @@ if(filter_input(INPUT_POST, 'submit')) {
 	$ip = $_SERVER['REMOTE_ADDR'];
 	$date = date('Y-m-d H:i:s',strtotime('-1 hour'));	//	this accounts for our Central timezone
 	//	Send a mailer to me
-	$to = $config['info_email'];
+	$to = $config['survey_email'];
 	$message = "<b>New IPT Survey Response:</b><br><br>\n"
 		. $questions[1] . "<br><b>$age</b><br><br>\n"
 		. $questions[2] . "<br><b>$first</b><br><br>\n"

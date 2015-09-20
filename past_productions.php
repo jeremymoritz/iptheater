@@ -37,7 +37,7 @@ foreach($productions as $p) {
 
 	if ($prod->getAbbr() === 'fl') {
 		$prodHTML .= "
-					<div class='cutout hide-xs'>
+					<div class='cutout hidden-xs'>
 						<img src='_img/clayton.png' alt=''>
 					</div>";
 	}

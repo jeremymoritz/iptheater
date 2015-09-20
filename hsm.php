@@ -32,28 +32,38 @@ $performancesHTML .= "
 				<!-- <p>Thank you so much to all of our auditionees!  If you did not make the list this time, please consider auditioning for us again in the future.  Every show has different demands, and everyone who has been involved in theater for any length of time has felt the disappointment of not being cast or missing out on a favorite role.  Don't give up!</p>
 				<p>If you were cast, congratulations!  We are excited to get to know each and every one of you and work together on this great show!  Please make special note of our first cast meeting.  Further details should be in your email.</p> -->
 				<h3>AUDITIONS &amp; CALLBACKS...</h3>
-				<p>Auditions will be sometime around early November, <?=date('Y');?>.  Check back later for more information.</p>
-				<!-- <p>Please fill out the <a class='btn btn-success' href='audition_form.php' title='Fill out the Audition Form!'><i class='fa fa-lg fa-pencil-square-o'></i> <?=$currentShow->getTitle();?> Audition Form</a> online in advance.</p>
+				<!-- <p>Auditions will be sometime around early November, <?=date('Y');?>.  Check back later for more information.</p> -->
+				<!-- <p>Please fill out the <a class='btn btn-success' href='audition_form.php' title='Fill out the Audition Form!'><i class='fa fa-lg fa-pencil-square-o'></i> <?=$currentShow->getTitle();?> Audition Form</a> online in advance.</p> -->
 				<p><strong>WHEN:</strong></p>
 				<ul>
-					<li>AUDITIONS: Saturday, November 1st, <?=date('Y');?> 9:00am - 12:30pm</li>
-					<li>CALLBACKS: Saturday, November 8th, <?=date('Y');?> 9:00am - 12:30pm (by invitation only)</li>
-					<li>OR...<a href='contact'>Contact us</a> if you wish to arrange an alternate audition over Skype or YouTube.</li>
+					<li>AUDITIONS: Saturday, October 31st, <?=date('Y');?> 9:00am - 2:30pm
+						<ul class='small'>
+							<li>First-come, first-served.</li>
+							<li>Most auditionees will be finished within 2 hours of arrival.</li>
+							<li>Yes, this is on Halloween; and yes, you're certainly welcome to wear a costume!</li>
+						</ul>
+					</li>
+					<li>CALLBACKS: Saturday, November 7th, <?=date('Y');?> 9:00am - 2:30pm (by invitation only)</li>
+					<li>OR...<a href='contact'>Contact us</a> if you wish to send an alternate audition over YouTube.</li>
 				</ul>
 				<p><strong>WHERE:</strong><br>
 					New City Church<br>
 					7456 Nieman Rd<br>
 					Shawnee, KS 66203</p>
-				<p><strong>WHO:</strong> Anyone age 10 or older may audition, but we're especially looking for teenagers and young adults.</p>
+				<!-- <p><strong>WHO:</strong> Anyone age 10 or older may audition, but we're especially looking for teenagers and young adults.</p> -->
+				<p><strong>WHO:</strong> 
+					<ul>
+						<li>Anyone age 13 or older may audition for <em>High School Musical</em></li>
+						<li>Anyone age 8 to 13 may audition for the Wildcat Crew preshow performance (see below for details)</li>
+					</ul>
+				</p>
 				<p><strong>WHAT TO PREPARE:</strong></p>
 				<ul>
 					<li>Prepare a solo audition song (approx. 30-45 seconds) with background music on CD or mp3 player.</li>
-					<li>Bring comfortable shoes and clothes to dance in.</li> -->
+					<li>Bring comfortable shoes and clothes to dance in.</li>
 					<!-- <li>For those who are unfamiliar with the roles, we encourage you to <a href='downloads/<?=$currentShow->getAbbr();?>%20Character%20Descriptions.pdf' target='_blank'>read the character descriptions</a>.</li> -->
-					<!-- <li><strong>OPTIONAL:</strong> Download the <a class='btn btn-success' href='downloads/<?=$currentShow->getAbbr();?>%20Callback%20Package.zip' title='Download the <?=$currentShow->getTitle();?> Callback Package!' target='_blank'><i class='fa fa-lg fa-arrow-circle-o-down'></i> <?=$currentShow->getTitle();?> Callback Package</a> to prepare for callbacks.</li>
-					<li><strong>OPTIONAL:</strong> Bring tap shoes if you wish to be considered for tap dancing roles.</li>
-					<li><strong>OPTIONAL:</strong> All who are interested in the optional tap dance portion of the audition are encouraged to <a href='s42_audition_prep' class='btn btn-info'><i class='fa fa-video-camera'></i> watch the instructional video</a> to learn the tap steps in advance.</li>
-				</ul><br> -->
+					<!-- <li><strong>OPTIONAL:</strong> Download the <a class='btn btn-success' href='downloads/<?=$currentShow->getAbbr();?>%20Callback%20Package.zip' title='Download the <?=$currentShow->getTitle();?> Callback Package!' target='_blank'><i class='fa fa-lg fa-arrow-circle-o-down'></i> <?=$currentShow->getTitle();?> Callback Package</a> to prepare for callbacks.</li> -->
+				</ul><br>
 				<h3>PERFORMANCES...</h3>
 				<p><strong>WHEN:</strong></p>
 				<div class='row'>
@@ -67,7 +77,7 @@ $performancesHTML .= "
 				<!-- <hr> -->
 				<!--<h2>...Cast Info...</h2>
 				<h3>CAST MEETING...</h3>
-				<p><strong>WHEN:</strong> Saturday, November 23rd, <?=date('Y');?> from 10:00am to 11:30am<br>
+				<p><strong>WHEN:</strong> Saturday, November 22nd, <?=date('Y');?> from 10:00am to 12:00pm<br>
 					<strong>WHERE:</strong>
 					New City Church<br>
 					7456 Nieman Rd<br>
@@ -85,11 +95,11 @@ $performancesHTML .= "
 				<p>We will be implementing some exciting new changes this year:</p>
 				<ol>
 					<li><strong>SMALLER CAST SIZE AND ENSEMBLE TRACKS:</strong> By limiting our cast size to 50 people (ages 13+), we'll have individual tracks set for the entrances, exits, costume changes, and dances for each member of the ensemble!</li>
-					<li><strong>WILDCAT CREW (PRESHOW PERFORMANCE):</strong> This year, we're excited to showcase a separate cast of performers (ages 8-13) before the start of each show!  The Wildcat Crew will have a 15-minute high-energy pre-show performance featuring the best musical numbers from High School Musical 2 and High School Musical 3!  Featured solo singers and fun dances will start our performances off with a rush of adrenaline!  The Crew will rehearse December 26 - 31, <?=date('Y');?> from 9am to 6pm daily.  All of these dances will be entertaining and challenging and choreographed by our very own Mindy Moritz!</li>
+					<li><strong>WILDCAT CREW (PRESHOW PERFORMANCE):</strong> This year, we're excited to showcase a separate cast of performers (ages 8-13) before the start of each show!  The Wildcat Crew will have a 15-minute high-energy pre-show performance featuring the best musical numbers from High School Musical 2 and High School Musical 3!  Featured solo singers and fun dances will start our performances off with a rush of adrenaline!  The Crew will rehearse December 26 - 31, <?=date('Y');?> from 9am to 12pm daily.  All of these dances will be entertaining and challenging and choreographed by our very own Mindy Moritz!</li>
 				</ol>
 				<h3>ABOUT THE SHOW...</h3>
 				<p>Here's a blurb about <em><?=$currentShow->getTitle();?></em>... <span>(excerpted from the licensing company's official website.)</span></p>
-				<blockquote class='text-left'>Disney Channel's smash hit movie musical comes to life on your stage! Troy, Gabriella, and the students of East High must deal with issues of first love, friends, and family while balancing their classes and extra curricular activities.<br>It's the first day after winter break at East High. The Jocks, Brainiacs, Thespians and Skater Dudes find their cliques, recount their vacations, and look forward to the new year. Basketball team captain and resident jock Troy discovers that the brainy Gabriella, a girl he met singing karaoke on his ski trip, has just enrolled at East High. They cause an upheaval when they decide to audition for the high school musical. Although many students resent the threat posed to the "status quo," Troy and Gabriella's alliance might just open the door for others to shine as well.<br>With many terrific roles and upbeat dance numbers, Disney's High School Musical is nonstop fun for the whole family!</blockquote>
+				<blockquote class='text-left'>Disney Channel's smash hit movie musical comes to life on your stage! Troy, Gabriella, and the students of East High must deal with issues of first love, friends, and family while balancing their classes and extra curricular activities.<br><br>It's the first day after winter break at East High. The Jocks, Brainiacs, Thespians and Skater Dudes find their cliques, recount their vacations, and look forward to the new year. Basketball team captain and resident jock Troy discovers that the brainy Gabriella, a girl he met singing karaoke on his ski trip, has just enrolled at East High. They cause an upheaval when they decide to audition for the high school musical. Although many students resent the threat posed to the "status quo," Troy and Gabriella's alliance might just open the door for others to shine as well.<br><br>With many terrific roles and upbeat dance numbers, Disney's High School Musical is nonstop fun for the whole family!</blockquote>
 				<h4><button class='btn btn-primary' id='showHideSynopsis'><i class='fa fa-file-text-o'></i> <span>Show</span> Detailed Plot Synopsis</button></h4>
 				<blockquote class='synopsis'>
 					<h4>SYNOPSIS OF <?=strtoupper($currentShow->getTitle());?></h4>
